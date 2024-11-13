@@ -109,6 +109,7 @@ subroutine Interpol_Forcing(TempSurf, PreSol, PreLiq, Sublim, SnowMelt, SnowDrif
                 Rho0FM(step) = 315.
             else
                 Rho0FM(step) = 97.49 + 0.4769*TempFM(step) + 4.49*ff10FM(step)
+                Rho0FM(step) = min(470., Rho0FM(step))
             end if
         end do
     end do
@@ -126,6 +127,7 @@ subroutine Interpol_Forcing(TempSurf, PreSol, PreLiq, Sublim, SnowMelt, SnowDrif
             Rho0FM(step) = 315.
         else
             Rho0FM(step) = 97.49 + 0.4769*TempFM(step) + 4.49*ff10FM(step)
+            Rho0FM(step) = min(470., Rho0FM(step))
         end if
     end do
 
